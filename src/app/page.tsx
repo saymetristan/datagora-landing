@@ -1,5 +1,10 @@
+import ClientProvider from './components/ClientProvider'
 import ClientLayout from './components/ClientLayout'
 
 export default function Home() {
-  return <ClientLayout />
+  return (
+    <ClientProvider>
+      <ClientLayout />
+    </ClientProvider>
+  )
 }
