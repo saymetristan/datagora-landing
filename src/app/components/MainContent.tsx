@@ -9,13 +9,11 @@ import SolutionsUsuariosSection from './sections/SolutionsUsuariosSection'
 import TestimoniosSection from './sections/TestimoniosSection'
 import CTASection from './sections/CTASection'
 
-export default function MainContent() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger)
-    }
-  }, [])
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
+export default function MainContent() {
   return (
     <main>
       <HeroSection />
