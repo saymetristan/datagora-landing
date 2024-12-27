@@ -12,21 +12,24 @@ export default function HeroSection() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: textRef.current,
-        start: 'top center',
-        end: 'bottom center',
-      }
-    })
+    const elements = textRef.current?.querySelectorAll('.animate-text')
+    if (elements) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: 'top center',
+          end: 'bottom center',
+        }
+      })
 
-    tl.from(textRef.current?.querySelectorAll('.animate-text'), {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: 'power4.out'
-    })
+      tl.from(elements, {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power4.out'
+      })
+    }
   }, [])
 
   return (

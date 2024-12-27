@@ -3,9 +3,10 @@
 import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Sphere, MeshDistortMaterial } from '@react-three/drei'
+import type { Mesh } from 'three'
 
 export default function FuturisticBackground() {
-  const sphereRef = useRef<THREE.Mesh>(null!)
+  const sphereRef = useRef<Mesh>(null!)
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime()

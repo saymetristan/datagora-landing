@@ -35,18 +35,21 @@ export default function SolutionsUsuariosSection() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     
-    gsap.from(titleRef.current?.querySelectorAll('.animate-text'), {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: titleRef.current,
-        start: 'top center+=100',
-        end: 'bottom center',
-        toggleActions: 'play none none reverse'
-      }
-    })
+    const elements = titleRef.current?.querySelectorAll('.animate-text')
+    if (elements) {
+      gsap.from(elements, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: 'top center+=100',
+          end: 'bottom center',
+          toggleActions: 'play none none reverse'
+        }
+      })
+    }
   }, [])
 
   return (

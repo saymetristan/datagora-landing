@@ -24,18 +24,21 @@ export default function Footer() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     
-    gsap.from(footerRef.current?.querySelectorAll('.animate-footer'), {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: footerRef.current,
-        start: 'top bottom-=100',
-        end: 'bottom bottom',
-        toggleActions: 'play none none reverse'
-      }
-    })
+    const elements = footerRef.current?.querySelectorAll('.animate-footer')
+    if (elements) {
+      gsap.from(elements, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: 'top bottom-=100',
+          end: 'bottom bottom',
+          toggleActions: 'play none none reverse'
+        }
+      })
+    }
   }, [])
 
   return (
