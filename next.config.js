@@ -8,7 +8,6 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['three', '@react-three/fiber', '@react-three/drei'],
   },
   webpack: (config) => {
@@ -18,4 +17,4 @@ const nextConfig = {
   }
 }
 
-export default nextConfig 
+module.exports = nextConfig 
